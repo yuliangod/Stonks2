@@ -1,0 +1,186 @@
+
+
+<style>
+
+		table
+		{
+			border-collapse: collapse;
+		}
+		th
+		{
+			color: #ffffff;
+			background-color: #000000;
+		}
+		td
+		{
+			background-color: #cccccc;
+		}
+		table, th, td
+		{
+			font-family:Arial, Helvetica, sans-serif;
+			border: 1px solid black;
+			text-align: right;
+		}
+		
+</style>
+
+<div id="fig_el1629220981939269925756954237"></div>
+<script>
+function mpld3_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(mpld3) !== "undefined" && mpld3._mpld3IsLoaded){
+   // already loaded: just create the figure
+   !function(mpld3){
+       
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                target:null,
+                                                hoffset:0,
+                                                voffset:10,
+                                                targets:null};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+        var obj = mpld3.get_element(this.props.id);
+        var labels = this.props.labels;
+        var targets = this.props.targets;
+        var tooltip = d3.select("body").append("div")
+            .attr("class", "mpld3-tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden");
+
+        obj.elements()
+            .on("mouseover", function(d, i){
+                tooltip.html(labels[i])
+                    .style("visibility", "visible");
+            })
+            .on("mousemove", function(d, i){
+                tooltip
+                .style("top", d3.event.pageY + this.props.voffset + "px")
+                .style("left",d3.event.pageX + this.props.hoffset + "px");
+            }.bind(this))
+            .on("mousedown.callout", function(d, i){
+                window.open(targets[i],"_blank");
+            })
+            .on("mouseout", function(d, i){
+                tooltip.style("visibility", "hidden");
+            });
+    };
+    
+       mpld3.draw_figure("fig_el1629220981939269925756954237", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [0.006613248649872868, 0.016015379619171887], "ylim": [-0.0007475613360360927, 0.0006621123564026281], "xdomain": [0.006613248649872868, 0.016015379619171887], "ydomain": [-0.0007475613360360927, 0.0006621123564026281], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 7, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el162922098195342144", "lines": [], "paths": [], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el162922098223895936pts", "facecolor": "#0000FF", "edgecolor": "#000000", "edgewidth": 1, "alpha": 0.6, "zorder": 2, "markerpath": [[[0.0, 0.5], [0.13260155, 0.5], [0.25978993539242673, 0.44731684579412084], [0.3535533905932738, 0.3535533905932738], [0.44731684579412084, 0.25978993539242673], [0.5, 0.13260155], [0.5, 0.0], [0.5, -0.13260155], [0.44731684579412084, -0.25978993539242673], [0.3535533905932738, -0.3535533905932738], [0.25978993539242673, -0.44731684579412084], [0.13260155, -0.5], [0.0, -0.5], [-0.13260155, -0.5], [-0.25978993539242673, -0.44731684579412084], [-0.3535533905932738, -0.3535533905932738], [-0.44731684579412084, -0.25978993539242673], [-0.5, -0.13260155], [-0.5, 0.0], [-0.5, 0.13260155], [-0.44731684579412084, 0.25978993539242673], [-0.3535533905932738, 0.3535533905932738], [-0.25978993539242673, 0.44731684579412084], [-0.13260155, 0.5], [0.0, 0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "Risk", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195344544"}, {"text": "Returns", "position": [-0.15252576164874554, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195088480"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.011036612868725862, -0.0004492134642133905], [0.014610877218408175, -0.00068348525910706], [0.015588010029658294, 0.000511204974713146], [0.00704061823938646, 0.0005980362794735953]]}, "id": "el162922098193926992", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el162922098223895936pts", "labels": ["<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 0</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>A17U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000449</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.011037</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 1</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>BN2.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000683</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.014611</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>TS0U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000511</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.015588</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>^STI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000598</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.007041</td>\n    </tr>\n  </tbody>\n</table>"], "targets": null, "hoffset": 10, "voffset": 10}]});
+   }(mpld3);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/mpld3
+   require.config({paths: {d3: "https://d3js.org/d3.v5"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.5.2.js", function(){
+         
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                target:null,
+                                                hoffset:0,
+                                                voffset:10,
+                                                targets:null};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+        var obj = mpld3.get_element(this.props.id);
+        var labels = this.props.labels;
+        var targets = this.props.targets;
+        var tooltip = d3.select("body").append("div")
+            .attr("class", "mpld3-tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden");
+
+        obj.elements()
+            .on("mouseover", function(d, i){
+                tooltip.html(labels[i])
+                    .style("visibility", "visible");
+            })
+            .on("mousemove", function(d, i){
+                tooltip
+                .style("top", d3.event.pageY + this.props.voffset + "px")
+                .style("left",d3.event.pageX + this.props.hoffset + "px");
+            }.bind(this))
+            .on("mousedown.callout", function(d, i){
+                window.open(targets[i],"_blank");
+            })
+            .on("mouseout", function(d, i){
+                tooltip.style("visibility", "hidden");
+            });
+    };
+    
+         mpld3.draw_figure("fig_el1629220981939269925756954237", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [0.006613248649872868, 0.016015379619171887], "ylim": [-0.0007475613360360927, 0.0006621123564026281], "xdomain": [0.006613248649872868, 0.016015379619171887], "ydomain": [-0.0007475613360360927, 0.0006621123564026281], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 7, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el162922098195342144", "lines": [], "paths": [], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el162922098223895936pts", "facecolor": "#0000FF", "edgecolor": "#000000", "edgewidth": 1, "alpha": 0.6, "zorder": 2, "markerpath": [[[0.0, 0.5], [0.13260155, 0.5], [0.25978993539242673, 0.44731684579412084], [0.3535533905932738, 0.3535533905932738], [0.44731684579412084, 0.25978993539242673], [0.5, 0.13260155], [0.5, 0.0], [0.5, -0.13260155], [0.44731684579412084, -0.25978993539242673], [0.3535533905932738, -0.3535533905932738], [0.25978993539242673, -0.44731684579412084], [0.13260155, -0.5], [0.0, -0.5], [-0.13260155, -0.5], [-0.25978993539242673, -0.44731684579412084], [-0.3535533905932738, -0.3535533905932738], [-0.44731684579412084, -0.25978993539242673], [-0.5, -0.13260155], [-0.5, 0.0], [-0.5, 0.13260155], [-0.44731684579412084, 0.25978993539242673], [-0.3535533905932738, 0.3535533905932738], [-0.25978993539242673, 0.44731684579412084], [-0.13260155, 0.5], [0.0, 0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "Risk", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195344544"}, {"text": "Returns", "position": [-0.15252576164874554, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195088480"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.011036612868725862, -0.0004492134642133905], [0.014610877218408175, -0.00068348525910706], [0.015588010029658294, 0.000511204974713146], [0.00704061823938646, 0.0005980362794735953]]}, "id": "el162922098193926992", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el162922098223895936pts", "labels": ["<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 0</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>A17U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000449</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.011037</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 1</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>BN2.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000683</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.014611</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>TS0U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000511</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.015588</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>^STI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000598</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.007041</td>\n    </tr>\n  </tbody>\n</table>"], "targets": null, "hoffset": 10, "voffset": 10}]});
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & mpld3
+    mpld3_load_lib("https://d3js.org/d3.v5.js", function(){
+         mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.5.2.js", function(){
+                 
+    mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+    HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+    HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+    HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+    HtmlTooltipPlugin.prototype.defaultProps = {labels:null,
+                                                target:null,
+                                                hoffset:0,
+                                                voffset:10,
+                                                targets:null};
+    function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+    };
+
+    HtmlTooltipPlugin.prototype.draw = function(){
+        var obj = mpld3.get_element(this.props.id);
+        var labels = this.props.labels;
+        var targets = this.props.targets;
+        var tooltip = d3.select("body").append("div")
+            .attr("class", "mpld3-tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden");
+
+        obj.elements()
+            .on("mouseover", function(d, i){
+                tooltip.html(labels[i])
+                    .style("visibility", "visible");
+            })
+            .on("mousemove", function(d, i){
+                tooltip
+                .style("top", d3.event.pageY + this.props.voffset + "px")
+                .style("left",d3.event.pageX + this.props.hoffset + "px");
+            }.bind(this))
+            .on("mousedown.callout", function(d, i){
+                window.open(targets[i],"_blank");
+            })
+            .on("mouseout", function(d, i){
+                tooltip.style("visibility", "hidden");
+            });
+    };
+    
+                 mpld3.draw_figure("fig_el1629220981939269925756954237", {"width": 640.0, "height": 480.0, "axes": [{"bbox": [0.125, 0.10999999999999999, 0.775, 0.77], "xlim": [0.006613248649872868, 0.016015379619171887], "ylim": [-0.0007475613360360927, 0.0006621123564026281], "xdomain": [0.006613248649872868, 0.016015379619171887], "ydomain": [-0.0007475613360360927, 0.0006621123564026281], "xscale": "linear", "yscale": "linear", "axes": [{"position": "bottom", "nticks": 7, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}, {"position": "left", "nticks": 9, "tickvalues": null, "tickformat_formatter": "", "tickformat": null, "scale": "linear", "fontsize": 10.0, "grid": {"gridOn": true, "color": "#B0B0B0", "dasharray": "none", "alpha": 0.3}, "visible": true}], "axesbg": "#FFFFFF", "axesbgalpha": null, "zoomable": true, "id": "el162922098195342144", "lines": [], "paths": [], "markers": [{"data": "data01", "xindex": 0, "yindex": 1, "coordinates": "data", "id": "el162922098223895936pts", "facecolor": "#0000FF", "edgecolor": "#000000", "edgewidth": 1, "alpha": 0.6, "zorder": 2, "markerpath": [[[0.0, 0.5], [0.13260155, 0.5], [0.25978993539242673, 0.44731684579412084], [0.3535533905932738, 0.3535533905932738], [0.44731684579412084, 0.25978993539242673], [0.5, 0.13260155], [0.5, 0.0], [0.5, -0.13260155], [0.44731684579412084, -0.25978993539242673], [0.3535533905932738, -0.3535533905932738], [0.25978993539242673, -0.44731684579412084], [0.13260155, -0.5], [0.0, -0.5], [-0.13260155, -0.5], [-0.25978993539242673, -0.44731684579412084], [-0.3535533905932738, -0.3535533905932738], [-0.44731684579412084, -0.25978993539242673], [-0.5, -0.13260155], [-0.5, 0.0], [-0.5, 0.13260155], [-0.44731684579412084, 0.25978993539242673], [-0.3535533905932738, 0.3535533905932738], [-0.25978993539242673, 0.44731684579412084], [-0.13260155, 0.5], [0.0, 0.5]], ["M", "C", "C", "C", "C", "C", "C", "C", "C", "Z"]]}], "texts": [{"text": "Risk", "position": [0.5, -0.07921476671476674], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "hanging", "rotation": -0.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195344544"}, {"text": "Returns", "position": [-0.15252576164874554, 0.5], "coordinates": "axes", "h_anchor": "middle", "v_baseline": "auto", "rotation": -90.0, "fontsize": 10.0, "color": "#000000", "alpha": 1, "zorder": 3, "id": "el162922098195088480"}], "collections": [], "images": [], "sharex": [], "sharey": []}], "data": {"data01": [[0.011036612868725862, -0.0004492134642133905], [0.014610877218408175, -0.00068348525910706], [0.015588010029658294, 0.000511204974713146], [0.00704061823938646, 0.0005980362794735953]]}, "id": "el162922098193926992", "plugins": [{"type": "reset"}, {"type": "zoom", "button": true, "enabled": false}, {"type": "boxzoom", "button": true, "enabled": false}, {"type": "htmltooltip", "id": "el162922098223895936pts", "labels": ["<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 0</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>A17U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000449</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.011037</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 1</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>BN2.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>-0.000683</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.014611</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>TS0U.SI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000511</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.015588</td>\n    </tr>\n  </tbody>\n</table>", "<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Row 3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Name</th>\n      <td>^STI</td>\n    </tr>\n    <tr>\n      <th>Returns</th>\n      <td>0.000598</td>\n    </tr>\n    <tr>\n      <th>Volatility</th>\n      <td>0.007041</td>\n    </tr>\n  </tbody>\n</table>"], "targets": null, "hoffset": 10, "voffset": 10}]});
+            })
+         });
+}
+</script>
