@@ -1,0 +1,37 @@
+Fiscal Year,2016,2017,2018,2019,2020
+Period Ended,31 Dec 2016,31 Dec 2017,31 Dec 2018,31 Dec 2019,31 Dec 2020
+Source,ARS,ARS,ARS,ARS,ARS
+Cash,58.53,112.46,0,0,0
+Short Term Investments,8.09,36.60,0,0,0
+Cash and Short Term Investments,66.63,149.06,122.93,55.63,43.89
+"Accounts Receivable - Trade, Net",98.07,121.69,146.75,133.75,157.39
+"Total Receivables, Net",122.27,197.88,302.32,305.15,249.78
+Prepaid Expenses,10.70,16.19,0,0,0
+"Other Current Assets, Total",49.62,136.30,46.47,27.62,24.11
+Total Current Assets,569.33,804.82,769.68,763.80,707.05
+"Property/Plant/Equipment, Total - Gross",559.74,625.82,743.55,874.14,952.47
+"Accumulated Depreciation, Total",-26.44,-43.87,-68.19,-96.41,-123.44
+"Property/Plant/Equipment, Total - Net",533.31,581.95,675.36,777.73,829.03
+"Goodwill, Net",189.89,189.89,287.40,286.38,286.38
+"Intangibles, Net",10.61,10.53,13.50,14.56,14.06
+Long Term Investments,229.49,25.26,47.99,45.75,44.88
+Total Assets,1549.52,1632.75,1814.62,1914.96,1963.99
+Accounts Payable,46.27,38.76,34.57,38.33,33.18
+Accrued Expenses,21.18,29.04,23.48,23.06,28.07
+Notes Payable/Short Term Debt,0.00,0.00,519.09,572.64,463.52
+"Other Current liabilities, Total",100.12,69.06,46.54,48.74,46.99
+Total Current Liabilities,412.71,344.90,625.03,725.07,947.58
+Total Long Term Debt,460.97,403.05,391.77,522.12,184.26
+Total Debt,706.11,611.09,912.21,1137.06,1023.60
+Deferred Income Tax,34.76,26.11,38.64,48.01,45.33
+"Other Liabilities, Total",19.00,20.87,23.29,30.77,37.72
+Total Liabilities,974.53,837.83,1107.65,1353.48,1236.28
+"Common Stock, Total",603.87,603.87,603.87,603.87,603.87
+Retained Earnings (Accumulated Deficit),48.57,77.13,-53.35,-57.30,-111.62
+Treasury Stock - Common,0,0,0,0,0
+Unrealised Gain (Loss),0,0,0,0,0
+"Other Equity, Total",-77.45,113.91,156.44,14.90,235.45
+Total Equity,575.00,794.92,706.97,561.48,727.71
+Total Liabilities & Shareholders' Equity,1549.52,1632.75,1814.62,1914.96,1963.99
+Total Common Shares Outstanding,1595.01,1595.01,1595.01,1595.01,1595.01
+"Tangible Book Value per Share, Common Eq",0.23,0.37,0.25,0.16,0.27

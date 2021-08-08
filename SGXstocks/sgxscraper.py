@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 
 
-def main(stock):
+def main(stock, i=0):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--incognito')
@@ -54,31 +54,14 @@ def main(stock):
     soup_table = soup.find_all("table")
     tables = pd.read_html(str(soup_table))
     
-    IS = tables[5].set_index('Fiscal Year')
+    IS = tables[-5 + i].set_index('Fiscal Year')
     IS = IS.replace("-", 0)
 
-    BS = tables[6].set_index('Fiscal Year')
+    BS = tables[-4 + i].set_index('Fiscal Year')
     BS = BS.replace("-", 0)
     
-    CF = tables[7].set_index('Fiscal Year')
+    CF = tables[-3 + i].set_index('Fiscal Year')
     CF = CF.replace("-", 0)
-
-    #convert tables to correct currency
-    #CC = CurrencyConverter()
-    #conversion_rate = CC.convert(1, currency, 'SGD')
-
-    #IS = IS.drop(["Period Ended", "Period Length", "Source"])
-    #IS = IS.astype(float)
-    #IS = IS * conversion_rate
-
-    #BS = BS.drop(["Period Ended", "Source"])
-    #BS = BS.astype(float)
-    #BS = BS * conversion_rate
-
-    #CF = CF.drop(["Period Ended", "Source"])
-    #CF = CF.astype(float)
-    #CF = CF * conversion_rate
-
 
     driver.quit()
     return IS, BS, CF, currency
@@ -86,19 +69,18 @@ def main(stock):
 def sgx_scraper(stock):
     for i in range(3):
         try:
-            tables = main(stock)
-            IS = tables[0]
-            BS = tables[1]
+            IS, BS, CF, currency = main(stock, i)
             E = BS.loc['Total Equity']   #try to find total equity in balance sheet to ensure tables were scraped properly
-            CF = tables[2]
-            currency = tables[3]
             break
+            
         except:
-            continue
+            IS, BS, CF, currency = None, None, None, None
+            continue 
     return IS, BS, CF, currency
 
 if __name__ == '__main__':
-    stock="A17U.SI"
+    stock="8AZ.SI"
 
     IS, BS, CF, currency = sgx_scraper(stock)
+    print(IS)
     print(f"{stock} reports its financial statements in {currency}")

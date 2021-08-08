@@ -9,7 +9,12 @@ from currency_converter import CurrencyConverter
 def main(stock, csv, year, timeframe=100, corrected_beta=0.5):
     a = Stonks(csv=csv, timeframe=timeframe)
     #get financial statements of stock
-    IS, BS, CF, currency = sgx_scraper(stock)
+    IS = pd.read_csv(f"SGXstocks/Database/{stock}/IS.csv", index_col=[0])
+    BS = pd.read_csv(f"SGXstocks/Database/{stock}/BS.csv", index_col=[0])
+    CF = pd.read_csv(f"SGXstocks/Database/{stock}/CF.csv", index_col=[0])
+    with open(f'SGXstocks/Database/{stock}/currency.txt') as f:
+        currency = f.read()
+
     print(f"{stock} reports its financial statements in {currency}")
 
     #set up dataframe
@@ -19,19 +24,15 @@ def main(stock, csv, year, timeframe=100, corrected_beta=0.5):
 
     #get revenue
     revenue = float(IS.loc['Revenue', year])
-    fcff_df.loc[(stock),'Revenue'] = revenue
 
     #get net income
     net_income = float(IS.loc['Net Income', year])
-    fcff_df.loc[(stock),'Net Income'] = net_income
 
     #get total equity
     total_equity = float(BS.loc['Total Equity', year])
-    fcff_df.loc[(stock),'Total Equity'] = total_equity
 
     #get total debt
     total_debt = float(BS.loc['Total Debt', year])
-    fcff_df.loc[(stock),'Total debt'] = total_debt
 
     #get leveled beta
     beta = a.Beta(stock, index="^STI")
@@ -208,9 +209,9 @@ def filter(fcff_csv, fcff=True, expected_growth_rate=False):
 if __name__ == "__main__":
     stock = "BN2.SI"
     csv = "SGXstocks/PriceHistory/SGX-priceHist.csv"
-    #main(stock, csv, "2020", timeframe=250)
+    main(stock, csv, "2020", timeframe=250)
 
-    #fcff_analysis(csv, "2020")
+    fcff_analysis(csv, "2020")
 
     fcff_csv = "SGXstocks/FCFF_analysis.xlsx"
     filter(fcff_csv, fcff=True)

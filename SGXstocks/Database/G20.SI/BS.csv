@@ -1,0 +1,37 @@
+Fiscal Year,2017,2018,2019,2020,2021
+Period Ended,31 Mar 2017,31 Mar 2018,31 Mar 2019,31 Mar 2020,31 Mar 2021
+Source,ARS,ARS,ARS,ARS,ARS
+Cash,167.81,194.16,247.48,221.10,226.07
+Short Term Investments,16.89,4.17,0.00,0,1.29
+Cash and Short Term Investments,184.70,198.33,247.48,221.10,227.36
+"Accounts Receivable - Trade, Net",164.60,152.07,160.38,148.98,209.44
+"Total Receivables, Net",187.34,185.72,202.92,201.83,259.96
+Prepaid Expenses,0,0,0,0,0
+"Other Current Assets, Total",27.62,34.65,61.91,36.21,32.67
+Total Current Assets,552.30,601.12,694.61,627.05,726.43
+"Property/Plant/Equipment, Total - Gross",672.71,660.51,644.80,757.42,826.42
+"Accumulated Depreciation, Total",-424.75,-369.39,-370.93,-395.67,-395.90
+"Property/Plant/Equipment, Total - Net",247.96,291.12,273.86,361.76,430.53
+"Goodwill, Net",12.29,11.42,7.82,8.32,7.84
+"Intangibles, Net",6.26,5.50,5.35,5.34,4.71
+Long Term Investments,255.81,254.37,255.23,273.38,306.28
+Total Assets,1084.22,1168.81,1242.21,1298.88,1501.38
+Accounts Payable,192.77,223.23,173.39,177.40,273.09
+Accrued Expenses,40.18,40.76,99.34,59.44,63.34
+Notes Payable/Short Term Debt,21.27,51.84,22.45,9.32,29.77
+"Other Current liabilities, Total",6.58,4.57,9.96,15.61,20.81
+Total Current Liabilities,443.57,588.26,604.34,778.42,778.91
+Total Long Term Debt,131.79,116.77,178.38,26.36,184.72
+Total Debt,335.83,436.47,500.02,552.33,606.40
+Deferred Income Tax,3.84,3.43,3.84,7.20,10.05
+"Other Liabilities, Total",0,0,0.36,18.37,17.32
+Total Liabilities,741.75,792.07,873.70,924.43,1082.15
+"Common Stock, Total",286.31,286.31,286.31,286.31,286.31
+Retained Earnings (Accumulated Deficit),181.08,205.96,103.07,109.01,153.79
+Treasury Stock - Common,-20.59,-20.59,-20.87,-20.87,-20.87
+Unrealised Gain (Loss),1.14,5.24,0,0,0
+"Other Equity, Total",-105.47,-100.18,0,0,0
+Total Equity,342.48,376.74,368.51,374.45,419.23
+Total Liabilities & Shareholders' Equity,1084.22,1168.81,1242.21,1298.88,1501.38
+Total Common Shares Outstanding,484.47,484.47,484.05,484.05,484.05
+"Tangible Book Value per Share, Common Eq",0.67,0.74,0.73,0.75,0.84

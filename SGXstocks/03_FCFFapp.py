@@ -42,8 +42,15 @@ class StonksApp:
         self.main_frame = Frame(self.master)
         self.main_frame.grid(row=0, column=0)
 
-        #plot graph of price history
-        self.plot_chart(0, 0, df=price_hist_df[stock], df2=price_hist_df["A17U.SI"], title="Price History", xlabel="Date", ylabel="Price(SGD)")
+        #plot graph of revenue and operating income
+        IS_df = pd.read_csv(f"SGXstocks/Database/{stock}/IS.csv", index_col=[0])
+        revenue_df = IS_df.loc["Revenue"]
+        revenue_df = revenue_df.astype(float)
+
+        operating_income_df = IS_df.loc["Operating Income"] 
+        operating_income_df=operating_income_df.astype(float)
+
+        self.plot_chart(0, 0, df=revenue_df, df2=operating_income_df, title="", xlabel="Year", ylabel="")
         
         #show name of stock
         trading_code = stock.replace(".SI", "")
